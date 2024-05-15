@@ -1,0 +1,22 @@
+let cities = [
+  { name: "Chennai", lat: 13.0827, lng: 80.2707 },
+  { name: "Bangalore", lat: 12.9716, lng: 77.5946 },
+  { name: "Hyderabad", lat: 17.3850, lng: 78.4867 },
+  { name: "Kochi", lat: 9.9392, lng: 76.2597 },
+  { name: "Thiruvananthapuram", lat: 8.5241, lng: 76.9366 },
+];
+
+function initMap() {
+  let map = new google.maps.Map(document.getElementById("map"), {
+    center: { lat: 12.9716, lng: 77.5946 },
+    zoom: 6,
+  });
+
+  cities.forEach((city) => {
+    let marker = new google.maps.Marker({
+      position: { lat: city.lat, lng: city.lng },
+      map: map,
+      title: city.name,
+    });
+  });
+}
